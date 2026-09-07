@@ -24,12 +24,13 @@ similarity > 0.9 to a dictionary atom — the SAE learned the actual generative
 features, not a rotated basis. Reconstruction R² and sparsity (mean active
 latents per sample) both converged cleanly.
 
-![Feature recovery](feature_recovery.png)
-![Training curves](training_curves.png)
-![Sparsity](sparsity.png)
-![Reconstruction quality](reconstruction_quality.png)
+![Feature recovery](Sparse%20Auto%20Encoder/feature_recovery.png)
+![Training curves](Sparse%20Auto%20Encoder/training_curves.png)
+![Sparsity](Sparse%20Auto%20Encoder/sparsity.png)
+![Reconstruction quality](Sparse%20Auto%20Encoder/reconstruction_quality.png)
 
-**Files:** `sparse_autoencoder.py` (model + training), `sae_visualizations.py` (plots)
+**Files:** `Sparse Auto Encoder/sparse_autoencoder.py` (model + training),
+`Sparse Auto Encoder/sae_visualizations.py` (plots)
 
 ---
 
@@ -49,8 +50,8 @@ accuracy sat near 0% until step ~10,000, then climbed to 88% by step 60,000.
 The loss curves show the double-descent shape underneath: test loss actually
 *rises* during the memorization phase before falling once the model groks.
 
-![Grokking curve](Grokking/grokking_visualizations.py)
-![Loss curve]()
+![Grokking curve](Grokking/grokking_curve.png)
+![Loss curve](Grokking/loss_curve.png)
 
 **Weight spectrum — the honest part:** I expected a clean "rank collapse" in
 the hidden-layer weight matrix as the model simplified from a memorizing to
@@ -61,11 +62,11 @@ collapse stories from the literature are usually measured on the embedding
 matrix or via Fourier-frequency structure, not raw SVD of a hidden layer fed
 one-hot inputs — a natural next step if you want the cleaner signal.
 
-![Weight spectrum evolution](weight_spectrum_evolution.png)
-![Effective rank vs test accuracy](effective_rank_vs_test_acc.png)
+![Weight spectrum evolution](Grokking/weight_spectrum_evolution.png)
+![Effective rank vs test accuracy](Grokking/effective_rank_vs_test_acc.png)
 
-**Files:** `grokking_experiment.py` (model + training + checkpointing),
-`grokking_visualizations.py` (plots)
+**Files:** `Grokking/grokking_experiment.py` (model + training + checkpointing),
+`Grokking/grokking_visualizations.py` (plots)
 
 ---
 
@@ -92,13 +93,13 @@ model reads subject identity early and routes it to the final position by
 the last layers — exactly the kind of circuit story causal tracing is meant
 to surface, and it emerged from training rather than being designed in.
 
-![Causal trace heatmap](causal_trace_heatmap.png)
-![Per-layer importance](per_layer_importance.png)
-![Per-position importance](per_position_importance.png)
-![Training curve](ct_training_curve.png)
+![Causal trace heatmap](causal%20tracing/causal_trace_heatmap.png)
+![Per-layer importance](causal%20tracing/per_layer_importance.png)
+![Per-position importance](causal%20tracing/per_position_importance.png)
+![Training curve](causal%20tracing/ct_training_curve.png)
 
-**Files:** `causal_tracing.py` (model + task + tracing),
-`causal_tracing_visualizations.py` (plots)
+**Files:** `causal tracing/causal_tracing.py` (model + task + tracing),
+`causal tracing/causal_tracing_visualizations.py` (plots)
 
 ---
 
