@@ -49,8 +49,8 @@ accuracy sat near 0% until step ~10,000, then climbed to 88% by step 60,000.
 The loss curves show the double-descent shape underneath: test loss actually
 *rises* during the memorization phase before falling once the model groks.
 
-![Grokking curve](grokking_curve.png)
-![Loss curve](loss_curve.png)
+![Grokking curve](Grokking/grokking_visualizations.py)
+![Loss curve]()
 
 **Weight spectrum — the honest part:** I expected a clean "rank collapse" in
 the hidden-layer weight matrix as the model simplified from a memorizing to
